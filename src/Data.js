@@ -4,9 +4,12 @@ import React from 'react'
 const Name = (props) => {
   return (
     <View style={styles.InputContainer}>
-      <Text>Name</Text>
+      <Text>{props.title}</Text>
       <TextInput
       placeholder={props.placeholder}
+      value={props.value}
+      onChangeText={props.onChangeText}
+      keyboardType={props.keyboardType}
       style={styles.TextInput}
       />
     </View>

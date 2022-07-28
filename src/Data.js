@@ -3,6 +3,7 @@ import React from 'react'
 
 const Name = (props) => {
   return (
+    <View style={styles.Container}>
     <View style={styles.InputContainer}>
       <Text>{props.title}</Text>
       <TextInput
@@ -13,6 +14,7 @@ const Name = (props) => {
       style={styles.TextInput}
       />
     </View>
+    </View>
   )
 }
 
@@ -21,7 +23,9 @@ export default Name
 const styles = StyleSheet.create({
       Container : {
       flex :1,
-      backgroundColor:"white"
+      backgroundColor:"white",
+      paddingBottom:8
+      
     },
     InputContainer:{
    marginTop:15,

@@ -1,4 +1,4 @@
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, ScrollView, StyleSheet, Text, View , Share } from 'react-native'
 import React, {useState} from 'react'
 import Data from "../src/Data"
 // import {Picker} from '@react-native-picker/picker';
@@ -7,7 +7,11 @@ import SelectList from 'react-native-dropdown-select-list'
 import dateFormat from 'dateformat'
 import { PdfCode } from './PDFCode'
 // import RNHTMLtoPDF from 'react-native-html-to-pdf';
+import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import RNPrint from 'react-native-print';
+import FileViewer from "react-native-file-viewer";
+
+
 
 const BillCreation = () => {
   const [name, setName] = useState("")
@@ -46,12 +50,28 @@ const BillCreation = () => {
           RemainingBalance);
 
           try {
-            const {uri} = await RNPrint.printToFileAsync({html})
-            console.log("File Saved to" , uri)
-
+            // const {uri} = await RNPrint.printToFileAsync({html})
+            // console.log("File Saved to" , uri)
+            
+            // const results = await RNHTMLtoPDF.convert({
+            //   html: '<h1>Custom converted PDF Document</h1>',
+            //   fileName: 'sasa',
+            //   base64: false,
+            // })
+            // console.log("File Saved to" , results.uri)
+            await RNPrint.print({ html: '<h1>Custom converted PDF Document</h1>',
+              fileName: 'sasa',
+              base64: true, })
+             
+          
+          
+          
+             
           } catch(error){
             console.log("error" , error)
           }
+          // console.log(html)
+
       }
   return (
     <View style={styles.Container}>

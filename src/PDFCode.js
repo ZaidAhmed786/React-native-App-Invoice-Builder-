@@ -46,13 +46,13 @@ const PdfCode = (
         flex-direction: column;
         align-items: flex-start;
         font-size: 2rem;  
-        padding-left: 20px;">दख्खन सप्लायर्स अपशिंगे<br></div>
+        padding-left: 20px;">INVOICE BUILDER<br></div>
     <div style="
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
     padding-left: 20px;
-    ">At Post Apshinge tal koregoan Dist Satara.</div>
+    ">REACT NATIVE APPLICATION</div>
     </div>
    
         <img style="
@@ -116,7 +116,7 @@ const PdfCode = (
                     parseFloat(Total) / parseFloat(Quantity)
                   ).toFixed(2)}</td>
                   <td style="text-align: center;height: 30px;">${Quantity}</td>
-                  <td style="text-align: center;height: 30px;">₹ ${Total}</td>
+                  <td style="text-align: center;height: 30px;">PKR${Total}</td>
                 </tr>
                
               </table>
@@ -133,16 +133,16 @@ const PdfCode = (
                   <table style="width: 50%; align-self: flex-end;">
                   <tr>
                   <th style="text-align: start;">Grand Total : </th>
-                  <td style="text-align: center;height: 30px;">₹ ${Total}</td>
+                  <td style="text-align: center;height: 30px;">PKR ${Total}</td>
               </tr>
                         <tr style="border-bottom: solid ;">
                             <th style="text-align: start;">Received Balance : </th>
-                            <td style="text-align: center;height: 30px;">₹ ${ReceivedBalance}</td>
+                            <td style="text-align: center;height: 30px;">PKR ${ReceivedBalance}</td>
                         </tr>
                        
                         <tr style="border-bottom: solid ;">
                         <th style="text-align: start;">Remaining Balance : </th>
-                        <td style="text-align: center;height: 30px;">₹ ${RemainingBalance}</td>
+                        <td style="text-align: center;height: 30px;">PKR ${RemainingBalance}</td>
                     </tr>
                         <tr>
                             <th style="text-align: start;">Payment Method: </th>

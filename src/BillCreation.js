@@ -17,7 +17,9 @@ const BillCreation = () => {
   const [name, setName] = useState("")
   const [MobileNumber, setMobileNumber] = useState("")
   const [Address, setAddress] = useState("")
-  const [Product, setProduct] = useState("")
+  const [Product, setProduct] = useState([
+    {key : "1" , value : "car" },
+    {key : "1" , value : "baike" }])
   const [Quantity, setQuantity] = useState("")
   const [Selected, setSelected] = useState("")
   const [Total, setTotal] = useState("")
@@ -59,15 +61,11 @@ const BillCreation = () => {
             //   base64: false,
             // })
             // console.log("File Saved to" , results.uri)
-            await RNPrint.print({ html: '<h1>Custom converted PDF Document</h1>',
+            await RNPrint.print({ html,
               fileName: 'sasa',
               base64: true, })
              
-          
-          
-          
-             
-          } catch(error){
+            } catch(error){
             console.log("error" , error)
           }
           // console.log(html)
@@ -83,7 +81,7 @@ const BillCreation = () => {
             {/* <Data title="Product" placeholder="Product" value={Product} onChangeText={(text)=>{setProduct(text)}}/> */}
             <View style={styles.InputContainer}>
               <Text>Product</Text>
-            <SelectList data={dataProduct} setSelected={setProduct} boxStyles={styles.TextInput} />
+            <SelectList data={Product} setSelected={setProduct} boxStyles={styles.TextInput} />
             </View>
             <Data title="Quantity" placeholder="Quantity" value={Quantity} onChangeText={(text)=>{setQuantity(text)}}/>
             <Data title="Total" placeholder="Total" value={Total} onChangeText={(text)=>{setTotal(text)}}/>
